@@ -58,15 +58,7 @@ async function run() {
     });
 
     // search by toy name
-    app.get("/searchToys/:text", async (req, res) => {
-      const text = req.params.text;
-      const result = await toyCollection
-        .find({
-          toy_name: { $regex: text, $options: "i" },
-        })
-        .toArray();
-      res.send(result);
-    });
+
 
     // sort by price
     app.get("/toysSortByPrice/:email", async (req, res) => {
